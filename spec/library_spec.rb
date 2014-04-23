@@ -87,6 +87,7 @@ describe Library do
     book = lib.check_out_book(book_id, sam)
 
     # The checkout should return the book
+    # I think this is the error with the ? mark
     expect(book).to be_a?(Book)
     expect(book.title).to eq "Green Eggs and Ham"
 
@@ -117,6 +118,7 @@ describe Library do
     book = lib.check_out_book(book_id, nielsen)
 
     # The first time should be successful
+    # Again, I think this is an error with the ? mark
     expect(book).to be_a?(Book)
 
     # However, you can't check out the same book twice!
