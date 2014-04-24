@@ -18,7 +18,7 @@ class Book
   end
 
   def check_in
-
+    @status = 'available'
   end
 
 
@@ -36,16 +36,20 @@ end
 class Library
   attr_accessor :books
 
-  def initialize(name)
+  def initialize
     @books = []
-    def register_new_book(title, author)
-      @title = title
-      @author = author
-      @books << {title => author}
-    end
   end
 
+  def count
+    @books.length
+  end
+
+  def register_new_book(book)
+    @books << [book]
+  end
+=begin
   def books
+
   end
 
   def add_book(title, author)
@@ -62,4 +66,5 @@ class Library
 
   def borrowed_books
   end
+=end
 end
