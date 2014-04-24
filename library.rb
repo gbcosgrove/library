@@ -1,15 +1,32 @@
 
 class Book
-  attr_reader :title
-  attr_reader :author
-  attr_reader :id
 
+  def title
+    @title
+  end
 
-  def initialize(title, author, id=nil)
+  def author
+    @author
+  end
+
+  def id
+    @id
+  end
+
+  def status
+    @status
+  end
+
+  def initialize(title, author, id=nil, status='available')
     @title = title
     @author = author
-    @id = nil
+    @id = id
+    @status = status
   end
+
+  #def status
+   #   @status = 'available'
+  # end
 
 end
 
@@ -23,8 +40,15 @@ class Borrower
 end
 
 class Library
+  attr_accessor :books
+
   def initialize(name)
     @books = []
+    def register_new_book(title, author)
+      @title = title
+      @author = author
+      @books << {title => author}
+    end
   end
 
   def books

@@ -12,7 +12,7 @@ describe Book do
     expect(book.id).to be_nil
   end
 
-  xit "has a default status of available" do
+  it "has a default status of available" do
     book = Book.new
     expect(book.status).to eq 'available'
   end
@@ -52,7 +52,7 @@ end
 
 describe Library do
 
-  it "starts with an empty array of books" do
+  xit "starts with an empty array of books" do
     lib = Library.new
     expect(lib.books.count).to eq(0)
   end
