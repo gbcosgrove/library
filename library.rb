@@ -1,32 +1,26 @@
 
 class Book
 
-  def title
-    @title
-  end
+  attr_reader :title
+  attr_reader :author
+  attr_reader :id
+  attr_reader :status
 
-  def author
-    @author
-  end
-
-  def id
-    @id
-  end
-
-  def status
-    @status
-  end
-
-  def initialize(title, author, id=nil, status='available')
+  def initialize(title, author)
     @title = title
     @author = author
-    @id = id
-    @status = status
+    @id = nil
+    @status = 'available'
   end
 
-  #def status
-   #   @status = 'available'
-  # end
+  def check_out
+    @status = 'checked_out'
+  end
+
+  def check_in
+
+  end
+
 
 end
 
