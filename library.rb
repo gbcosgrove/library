@@ -16,9 +16,7 @@ class Book
   def check_out
     if @status == 'available'
       @status = 'checked_out'
-      return true
     else
-      @status = 'checked_out'
       return false
     end
   end
@@ -61,9 +59,10 @@ class Library
     Book.new(title, author)
     @title = title
     @author = author
-    @books << [title, author]
+    @books << {title => author}
 
   end
+
 =begin
   def books
 
@@ -73,9 +72,12 @@ class Library
   end
 
   def check_out_book(book_id, borrower)
+    @book_id
+    @borrower
   end
 
   def check_in_book(book)
+    @book
   end
 
   def available_books

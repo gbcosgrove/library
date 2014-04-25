@@ -1,11 +1,11 @@
 require "./library.rb"
-# require 'pry-debugger'
+require 'pry-debugger'
 
 describe Book do
   it "has a title and author, and nil id" do
     book = Book.new("The Stranger", "Albert Camus")
 
-    # binding.pry
+    binding.pry
 
     expect(book.title).to eq "The Stranger"
     expect(book.author).to eq "Albert Camus"
@@ -63,8 +63,8 @@ describe Library do
     expect(lib.books.count).to eq(1)
 
     created_book = lib.books.first
-    #expect(created_book.title).to eq "Nausea"
-   # expect(created_book.author).to eq "Jean-Paul Sartre"
+    expect(created_book.title).to eq "Nausea"
+    expect(created_book.author).to eq "Jean-Paul Sartre"
     expect(created_book.id).to_not be_nil
   end
 
