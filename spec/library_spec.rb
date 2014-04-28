@@ -5,7 +5,7 @@ describe Book do
   it "has a title and author, and nil id" do
     book = Book.new("The Stranger", "Albert Camus")
 
-    binding.pry
+    #binding.pry
 
     expect(book.title).to eq "The Stranger"
     expect(book.author).to eq "Albert Camus"
@@ -52,12 +52,12 @@ end
 
 describe Library do
 
-  it "starts with an empty array of books" do
+  xit "starts with an empty array of books" do
     lib = Library.new
     expect(lib.books.count).to eq(0)
   end
 
-  it "add new books and assigns it an id" do
+  xit "add new books and assigns it an id" do
     lib = Library.new
     lib.register_new_book("Nausea", "Jean-Paul Sartre")
     expect(lib.books.count).to eq(1)

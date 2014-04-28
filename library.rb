@@ -16,13 +16,16 @@ class Book
   def check_out
     if @status == 'available'
       @status = 'checked_out'
-    else
-      return false
+      true
+    elsif @status == 'checked_out'
+      false
     end
   end
 
   def check_in
-    @status = 'available'
+    if @status == 'checked_out'
+      @status = 'available'
+    end
   end
 
 
@@ -63,7 +66,7 @@ class Library
 
   end
 
-=begin
+
   def books
 
   end
@@ -72,8 +75,8 @@ class Library
   end
 
   def check_out_book(book_id, borrower)
-    @book_id
-    @borrower
+    @book_id = book_id
+    @borrower = borrower
   end
 
   def check_in_book(book)
@@ -85,5 +88,5 @@ class Library
 
   def borrowed_books
   end
-=end
+
 end
