@@ -1,10 +1,8 @@
 
 class Book
 
-  attr_reader :title
-  attr_reader :author
-  attr_reader :id
-  attr_reader :status
+  attr_reader :title, :author, :status
+  attr_accessor :id
 
   def initialize(title=nil, author=nil)
     @title = title
@@ -41,46 +39,30 @@ class Borrower
 end
 
 class Library
-  attr_accessor :books
-  attr_accessor :title
-  attr_accessor :author
-  attr_writer :id
+  attr_reader :name, :books, :title, :author, :id, :count
 
   def initialize
     @books = []
-  end
-
-  def count
-    @books.length
-  end
-
-  def id
-    @books.length
+    @count = @books.length
   end
 
   def register_new_book(title, author)
-    Book.new(title, author)
+    @books << Book.new(title, author)
     @title = title
     @author = author
-    @books << {title => author}
-
+    @count += 1
+    Book.id = @count
   end
 
-
-  def books
-
-  end
 
   def add_book(title, author)
   end
 
-  def check_out_book(book_id, borrower)
-    @book_id = book_id
+  def check_out_book(borrower)
     @borrower = borrower
   end
 
-  def check_in_book(book)
-    @book
+  def check_in_book
   end
 
   def available_books
